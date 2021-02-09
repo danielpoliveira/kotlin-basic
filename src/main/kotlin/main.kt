@@ -1,28 +1,73 @@
 fun main(args: Array<String>) {
-//    println("Bem vindo ao ByteBank")
-//    println()
-//
-//    val contaDaniel = Conta();
-//    val contaFran = Conta()
-//
-//    contaDaniel.titular = "Daniel"
-//    contaDaniel.numero = 7500
-//    contaDaniel.saldo = 1600.0
-//
-//    contaFran.titular = "Fran"
-//    contaFran.numero = 9751
-//    contaFran.saldo = 350.45
-//
-//    println(contaDaniel.titular)
-//    println(contaDaniel.numero)
-//    println(contaDaniel.saldo)
-//
-//    println()
-//
-//    println(contaFran.titular)
-//    println(contaFran.numero)
-//    println(contaFran.saldo)
+    println("Bem vindo ao ByteBank")
+    println()
 
+    val contaDaniel = Conta();
+    val contaFran = Conta()
+
+    contaDaniel.titular = "Daniel"
+    contaDaniel.numero = 7500
+    contaDaniel.saldo = 1600.0
+
+    contaFran.titular = "Fran"
+    contaFran.numero = 9751
+    contaFran.saldo = 350.45
+
+    println(contaDaniel.titular)
+    println(contaDaniel.numero)
+    println(contaDaniel.saldo)
+
+    println()
+
+    println(contaFran.titular)
+    println(contaFran.numero)
+    println(contaFran.saldo)
+
+    println()
+    println("Efetuando depósito de 50.0 na conta do Daniel")
+    contaDaniel.deposita(50.0)
+    println(contaDaniel.saldo)
+
+    println()
+    println("Efetuando depósito de 70.0 na conta da Fran")
+    contaFran.deposita(70.0)
+    println(contaFran.saldo)
+
+    println("Sacando na conta do Daniel")
+    contaDaniel.saca(1650.0)
+    println(contaDaniel.saldo)
+
+    println("Sacando na conta da Fran")
+    contaFran.saca(125.0)
+    println(contaFran.saldo)
+
+    println("Sacando em excesso na conta do Daniel")
+    contaDaniel.saca(15.95)
+    println(contaDaniel.saldo)
+
+    println("Sacando em excesso na conta da Fran")
+    contaFran.saca(350.5)
+    println(contaFran.saldo)
+}
+
+
+class Conta {
+    var titular = ""
+    var numero = 0
+    var saldo = 0.0
+
+    fun deposita(valor: Double) {
+        this.saldo += valor
+    }
+
+    fun saca(valor: Double) {
+        if(this.saldo >= valor) {
+            this.saldo -= valor
+        }
+    }
+}
+
+fun testaCopiasEReferencia() {
     val numeroX = 10
     var numeroY = numeroX
 
@@ -42,12 +87,6 @@ fun main(args: Array<String>) {
 
     println(contaJoao)
     println(contaMaria)
-}
-
-class Conta {
-    var titular = ""
-    var numero = 0
-    var saldo = 0.0
 }
 
 fun testaLacos() {
