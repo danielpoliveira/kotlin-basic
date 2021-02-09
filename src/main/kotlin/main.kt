@@ -1,71 +1,70 @@
 fun main(args: Array<String>) {
-    println("Bem vindo ao ByteBank")
-    println()
+    println("Bem vindo ao ByteBank\n")
 
-    val contaDaniel = Conta();
+    val contaDaniel = Conta()
     val contaFran = Conta()
 
-    contaDaniel.titular = "Daniel"
-    contaDaniel.numero = 7500
-    contaDaniel.saldo = 1600.0
+    contaDaniel.setTitular("Daniel")
+    contaDaniel.setNumero(7500)
+    contaDaniel.setSaldo(1600.0)
 
-    contaFran.titular = "Fran"
-    contaFran.numero = 9751
-    contaFran.saldo = 350.45
+    contaFran.setTitular("Fran")
+    contaFran.setNumero(9751)
+    contaFran.setSaldo(350.45)
 
-    println(contaDaniel.titular)
-    println(contaDaniel.numero)
-    println(contaDaniel.saldo)
-
-    println()
-
-    println(contaFran.titular)
-    println(contaFran.numero)
-    println(contaFran.saldo)
+    println(contaDaniel.getTitular())
+    println(contaDaniel.getNumero())
+    println(contaDaniel.getSaldo())
 
     println()
-    println("Efetuando depósito de 50.0 na conta do Daniel")
-    contaDaniel.deposita(50.0)
-    println(contaDaniel.saldo)
 
-    println()
-    println("Efetuando depósito de 70.0 na conta da Fran")
-    contaFran.deposita(70.0)
-    println(contaFran.saldo)
+    println(contaFran.getTitular())
+    println(contaFran.getNumero())
+    println(contaFran.getSaldo())
 
-    println("Sacando na conta do Daniel")
-    contaDaniel.saca(1650.0)
-    println(contaDaniel.saldo)
-
-    println("Sacando na conta da Fran")
-    contaFran.saca(125.0)
-    println(contaFran.saldo)
-
-    println("Sacando em excesso na conta do Daniel")
-    contaDaniel.saca(15.95)
-    println(contaDaniel.saldo)
-
-    println("Sacando em excesso na conta da Fran")
-    contaFran.saca(350.5)
-    println(contaFran.saldo)
-
-    println("Transferência da conta da Fran para o Daniel")
-    val checkTransferencia = contaFran.transfere(300.0, contaDaniel)
-    if (checkTransferencia) {
-        println("Transferência concluída")
-    } else {
-        println("Falha na transferẽncia")
-    }
-
-    println(contaDaniel.saldo)
-    println(contaFran.saldo)
+//    println()
+//    println("Efetuando depósito de 50.0 na conta do Daniel")
+//    contaDaniel.deposita(50.0)
+//    println(contaDaniel.saldo)
+//
+//    println()
+//    println("Efetuando depósito de 70.0 na conta da Fran")
+//    contaFran.deposita(70.0)
+//    println(contaFran.saldo)
+//
+//    println("Sacando na conta do Daniel")
+//    contaDaniel.saca(1650.0)
+//    println(contaDaniel.saldo)
+//
+//    println("Sacando na conta da Fran")
+//    contaFran.saca(125.0)
+//    println(contaFran.saldo)
+//
+//    println("Sacando em excesso na conta do Daniel")
+//    contaDaniel.saca(15.95)
+//    println(contaDaniel.saldo)
+//
+//    println("Sacando em excesso na conta da Fran")
+//    contaFran.saca(350.5)
+//    println(contaFran.saldo)
+//
+//    println("Transferência da conta da Fran para o Daniel")
+//    val checkTransferencia = contaFran.transfere(300.0, contaDaniel)
+//    if (checkTransferencia) {
+//        println("Transferência concluída")
+//    } else {
+//        println("Falha na transferẽncia")
+//    }
+//
+//    println(contaDaniel.saldo)
+//    println(contaFran.saldo)
 }
 
 
 class Conta {
-    var titular = ""
-    var numero = 0
-    var saldo = 0.0
+    private var titular = ""
+    private var numero = 0
+    private var saldo = 0.0
 
     fun deposita(valor: Double) {
         this.saldo += valor
@@ -85,6 +84,37 @@ class Conta {
         }
         return false
     }
+
+    fun getTitular(): String {
+        return this.titular
+    }
+
+    fun getNumero(): Int {
+        return this.numero
+    }
+
+    fun getSaldo(): Double {
+        return this.saldo
+    }
+
+    fun setTitular(titular: String) {
+        if(titular != "") {
+            this.titular = titular
+        }
+    }
+
+    fun setNumero(numero: Int) {
+        if(numero > 0) {
+            this.numero = numero
+        }
+    }
+
+    fun setSaldo(valor: Double) {
+        if (valor > 0) {
+            this.saldo = valor
+        }
+    }
+
 }
 
 fun testaCopiasEReferencia() {
@@ -97,13 +127,13 @@ fun testaCopiasEReferencia() {
     println("NúmeroY: $numeroY")
 
     val contaJoao = Conta()
-    contaJoao.titular = "João"
+    contaJoao.setTitular("João")
 
     var contaMaria = Conta()
-    contaMaria.titular = "Maria"
+    contaMaria.setTitular("Maria")
 
-    println("Conta titular joao: ${contaJoao.titular}")
-    println("Conta titular maria: ${contaMaria.titular}")
+    println("Conta titular joao: ${contaJoao.getTitular()}")
+    println("Conta titular maria: ${contaMaria.getTitular()}")
 
     println(contaJoao)
     println(contaMaria)
