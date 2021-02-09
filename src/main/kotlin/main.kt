@@ -1,25 +1,20 @@
 fun main(args: Array<String>) {
     println("Bem vindo ao ByteBank\n")
 
-    val contaDaniel = Conta()
-    val contaFran = Conta()
+    val contaDaniel = Conta("Daniel", 1000)
+    val contaFran = Conta("Fran", 1001)
 
-    contaDaniel.setTitular("Daniel")
-    contaDaniel.setNumero(7500)
     contaDaniel.deposita(1600.0)
-
-    contaFran.setTitular("Fran")
-    contaFran.setNumero(9751)
     contaFran.deposita(350.45)
 
-    println(contaDaniel.getTitular())
-    println(contaDaniel.getNumero())
+    println(contaDaniel.titular)
+    println(contaDaniel.numero)
     println(contaDaniel.saldo)
 
     println()
 
-    println(contaFran.getTitular())
-    println(contaFran.getNumero())
+    println(contaFran.titular)
+    println(contaFran.numero)
     println(contaFran.saldo)
 
     println()
@@ -61,9 +56,10 @@ fun main(args: Array<String>) {
 }
 
 
-class Conta {
-    private var titular = ""
-    private var numero = 0
+class Conta(
+    var titular: String,
+    var numero: Int
+) {
     var saldo = 0.0
         private set
 
@@ -88,31 +84,6 @@ class Conta {
         return false
     }
 
-    fun getTitular(): String {
-        return this.titular
-    }
-
-    fun getNumero(): Int {
-        return this.numero
-    }
-
-    fun setTitular(titular: String) {
-        if (titular != "") {
-            this.titular = titular
-        }
-    }
-
-    fun setNumero(numero: Int) {
-        if (numero > 0) {
-            this.numero = numero
-        }
-    }
-
-//    fun setSaldo(valor: Double) {
-//        if (valor > 0) {
-//            this.saldo = valor
-//        }
-//    }
 
 }
 
@@ -125,14 +96,11 @@ fun testaCopiasEReferencia() {
     println("NúmeroX: $numeroX")
     println("NúmeroY: $numeroY")
 
-    val contaJoao = Conta()
-    contaJoao.setTitular("João")
+    val contaJoao = Conta("João", 1002)
+    var contaMaria = Conta("Maria", 1003)
 
-    var contaMaria = Conta()
-    contaMaria.setTitular("Maria")
-
-    println("Conta titular joao: ${contaJoao.getTitular()}")
-    println("Conta titular maria: ${contaMaria.getTitular()}")
+    println("Conta titular joao: ${contaJoao.titular}")
+    println("Conta titular maria: ${contaMaria.titular}")
 
     println(contaJoao)
     println(contaMaria)
