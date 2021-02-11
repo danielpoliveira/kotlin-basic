@@ -1,6 +1,5 @@
 package modelo
 
-import modelo.Funcionario
 //Fully qualified name
 
 class Auxiliar(

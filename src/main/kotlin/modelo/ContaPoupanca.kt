@@ -1,7 +1,5 @@
 package modelo
 
-import modelo.Conta
-
 class ContaPoupanca(
     titular: String,
     numero: Int
