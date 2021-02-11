@@ -22,7 +22,7 @@ workspace.xml
 .gradle/
 build/
 !**/src/**/build
-!**/test/**/build
+!**/br.com.example.bytebank.test/**/build
 *.iml
 !**/testData/**/*.iml
 .idea/libraries/Gradle*.xml
@@ -57,7 +57,7 @@ build/
 kotlin-ultimate/
 node_modules/
 .rpt2_cache/
-libraries/tools/kotlin-test-js-runner/lib/
+libraries/tools/kotlin-br.com.example.bytebank.test-js-runner/lib/
 local.properties
 buildSrcTmp/
 distTmp/

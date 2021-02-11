@@ -13,7 +13,7 @@ repositories {
 }
 
 dependencies {
-    testImplementation(kotlin("test-junit"))
+    testImplementation(kotlin("br.com.example.bytebank.test-junit"))
 }
 
 tasks.test {

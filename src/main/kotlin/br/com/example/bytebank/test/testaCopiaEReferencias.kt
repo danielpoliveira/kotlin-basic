@@ -1,5 +1,5 @@
-import modelo.ContaCorrente
-import modelo.ContaPoupanca
+import br.com.example.bytebank.modelo.ContaCorrente
+import br.com.example.bytebank.modelo.ContaPoupanca
 
 fun testaCopiasEReferencias() {
     val numeroX = 10
@@ -13,8 +13,8 @@ fun testaCopiasEReferencias() {
     val contaJoao = ContaCorrente("João", 1002)
     var contaMaria = ContaPoupanca("Maria", 1003)
 
-    println("modelo.Conta titular joao: ${contaJoao.titular}")
-    println("modelo.Conta titular maria: ${contaMaria.titular}")
+    println("br.com.example.bytebank.modelo.Conta titular joao: ${contaJoao.titular}")
+    println("br.com.example.bytebank.modelo.Conta titular maria: ${contaMaria.titular}")
 
     println(contaJoao)
     println(contaMaria)

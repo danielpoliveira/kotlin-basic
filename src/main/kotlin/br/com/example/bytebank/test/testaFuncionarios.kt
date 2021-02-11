@@ -1,9 +1,9 @@
-//import modelo.Analista
-//import modelo.CalculadoraBonificacao
-//import modelo.Diretor
-//import modelo.Gerente
+//import br.com.example.bytebank.modelo.Analista
+//import br.com.example.bytebank.modelo.CalculadoraBonificacao
+//import br.com.example.bytebank.modelo.Diretor
+//import br.com.example.bytebank.modelo.Gerente
 
-import modelo.*
+import br.com.example.bytebank.modelo.*
 
 fun testaFuncionarios() {
     val daniel = Analista(

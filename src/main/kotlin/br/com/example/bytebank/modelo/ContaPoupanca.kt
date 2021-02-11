@@ -1,4 +1,4 @@
-package modelo
+package br.com.example.bytebank.modelo
 
 class ContaPoupanca(
     titular: String,
