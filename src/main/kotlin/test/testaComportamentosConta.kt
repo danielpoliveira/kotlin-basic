@@ -1,3 +1,6 @@
+import modelo.ContaCorrente
+import modelo.ContaPoupanca
+
 fun testaComportamentosConta() {
     val contaDaniel = ContaCorrente(titular = "Daniel", numero = 1000)
     val contaFran = ContaPoupanca(titular = "Fran", numero = 1001)

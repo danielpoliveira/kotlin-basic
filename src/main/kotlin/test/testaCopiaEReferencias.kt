@@ -1,3 +1,6 @@
+import modelo.ContaCorrente
+import modelo.ContaPoupanca
+
 fun testaCopiasEReferencias() {
     val numeroX = 10
     var numeroY = numeroX
@@ -10,8 +13,8 @@ fun testaCopiasEReferencias() {
     val contaJoao = ContaCorrente("João", 1002)
     var contaMaria = ContaPoupanca("Maria", 1003)
 
-    println("Conta titular joao: ${contaJoao.titular}")
-    println("Conta titular maria: ${contaMaria.titular}")
+    println("modelo.Conta titular joao: ${contaJoao.titular}")
+    println("modelo.Conta titular maria: ${contaMaria.titular}")
 
     println(contaJoao)
     println(contaMaria)
