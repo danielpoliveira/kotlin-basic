@@ -1,7 +1,7 @@
 package br.com.example.bytebank.modelo
 
 abstract class Conta(
-    var titular: String,
+    val titular: Cliente,
     val numero: Int
 ) {
     var saldo = 0.0
